@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace YoutubeDownloader
 {
-    internal class WindowNativeMethod
+    internal class WindowNativeMethods
     {
         [DllImport("user32")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int message, IntPtr wParam, IntPtr lParam);
