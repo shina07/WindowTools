@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.urlInfoTextBox = new System.Windows.Forms.TextBox();
             this.urlSearchTextBox = new System.Windows.Forms.TextBox();
             this.urlSearchButton = new System.Windows.Forms.Button();
@@ -153,8 +154,9 @@
             this.Controls.Add(this.logTextBox);
             this.Controls.Add(this.userGroupBox);
             this.Controls.Add(this.youtubeGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "YoutubeDownloaderDll";
+            this.Text = "유투브 다운로더";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.userGroupBox.ResumeLayout(false);
