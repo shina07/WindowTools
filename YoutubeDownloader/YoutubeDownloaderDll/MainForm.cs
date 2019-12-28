@@ -22,18 +22,30 @@ namespace YoutubeDownloaderDll
 
         private void downloadPathComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Configuration.Instance.Root = downloadPathComboBox.SelectedItem.ToString();
+            Configuration.Instance.DownloadPath = downloadPathComboBox.Items.Cast<string>().ToList();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Configuration.Save();
+            if (Configuration.Instance.Location != this.Location)
+                Configuration.Instance.FormStartPosition = FormStartPosition.Manual;
+
+            Configuration.Instance.Location = this.Location;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            downloadPathComboBox.SelectedIndexChanged -= downloadPathComboBox_SelectedIndexChanged;
+            downloadPathComboBox.Items.AddRange(Configuration.Instance.DownloadPath.ToArray());
+            if (downloadPathComboBox.Items.Count != 0)
+            {
+                downloadPathComboBox.SelectedIndex = 0;
+            }
+            downloadPathComboBox.SelectedIndexChanged += downloadPathComboBox_SelectedIndexChanged;
 
             Logger.WriteNoticeLine("LOAD COMPLETE");
+            Logger.WriteNoticeLine("CURRENT ROOT: {0}", Configuration.Instance.Root);
         }
 
         private void searchDownloadPathButton_Click(object sender, EventArgs e)

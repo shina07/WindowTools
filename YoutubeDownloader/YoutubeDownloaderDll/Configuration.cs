@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 using YoutubeDownloaderCore;
 
@@ -18,7 +19,8 @@ namespace YoutubeDownloaderDll
             Instance = new Configuration()
             {
                 DownloadPath = new List<string>(),
-                Position = Point.Empty,
+                FormStartPosition = FormStartPosition.CenterScreen,
+                Location = Point.Empty,
                 Root = @".."
             };
         }
@@ -45,9 +47,10 @@ namespace YoutubeDownloaderDll
             }
         }
 
-        private List<string> DownloadPath { get; set; }
-        private static Configuration Instance { get; set; }
-        private Point Position { get; set; }
-        private string Root { get; set; }
+        public List<string> DownloadPath { get; set; }
+        public FormStartPosition FormStartPosition { get; set; }
+        internal static Configuration Instance { get; set; }
+        public Point Location { get; set; }
+        public string Root { get; set; }
     }
 }

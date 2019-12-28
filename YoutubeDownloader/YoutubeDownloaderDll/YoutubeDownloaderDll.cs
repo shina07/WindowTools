@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -8,6 +9,20 @@ namespace YoutubeDownloaderDll
     {
         private static bool LoadConfiguration()
         {
+            try
+            {
+                Configuration.Load();
+            }
+            catch (FileNotFoundException)
+            {
+                Configuration.CreateNew();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("CANNOT LOAD CONFIGURATION: {0}", e.ToString());
+                return false;
+            }
+
             return true;
         }
 
@@ -15,7 +30,7 @@ namespace YoutubeDownloaderDll
         {
             if (LoadConfiguration() == false)
             {
-                Configuration.CreateNew();
+                return;
             }
 
             try
@@ -25,6 +40,7 @@ namespace YoutubeDownloaderDll
             }
             finally
             {
+                var path = Configuration.Instance.DownloadPath;
                 Configuration.Save();
             }
         }
