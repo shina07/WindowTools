@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using YoutubeDownloaderCore;
 
-namespace YoutubeDownloader
+namespace YoutubeDownloaderDll
 {
-    internal class Configuration
+    public class Configuration
     {
         private static readonly string ConfigPath = "Configuration.xml";
 
-        internal void CreateNew()
+        public static void CreateNew()
         {
             Instance = new Configuration()
             {
@@ -22,7 +23,7 @@ namespace YoutubeDownloader
             };
         }
 
-        internal void Load()
+        internal static void Load()
         {
             var path = ConfigPath;
 
@@ -33,7 +34,7 @@ namespace YoutubeDownloader
             }
         }
 
-        internal void Save()
+        internal static void Save()
         {
             var path = ConfigPath;
 

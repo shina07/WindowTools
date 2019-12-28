@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YoutubeDownloader.Properties {
+namespace YoutubeDownloaderDll.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

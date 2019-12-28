@@ -1,4 +1,4 @@
-﻿namespace YoutubeDownloader
+﻿namespace YoutubeDownloaderDll
 {
     partial class MainForm
     {
@@ -32,9 +32,9 @@
             this.urlSearchTextBox = new System.Windows.Forms.TextBox();
             this.urlSearchButton = new System.Windows.Forms.Button();
             this.userGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.savePathComboBox = new System.Windows.Forms.ComboBox();
-            this.savePathSearchButton = new System.Windows.Forms.Button();
+            this.searchDownloadPathButton = new System.Windows.Forms.Button();
+            this.downloadPathComboBox = new System.Windows.Forms.ComboBox();
+            this.downloadPathInfoTextBox = new System.Windows.Forms.TextBox();
             this.youtubeGroupBox = new System.Windows.Forms.GroupBox();
             this.logTextBox = new System.Windows.Forms.TextBox();
             this.userGroupBox.SuspendLayout();
@@ -58,13 +58,13 @@
             this.urlSearchTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.urlSearchTextBox.Location = new System.Drawing.Point(88, 17);
             this.urlSearchTextBox.Name = "urlSearchTextBox";
-            this.urlSearchTextBox.Size = new System.Drawing.Size(231, 21);
+            this.urlSearchTextBox.Size = new System.Drawing.Size(397, 21);
             this.urlSearchTextBox.TabIndex = 3;
             // 
             // urlSearchButton
             // 
             this.urlSearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.urlSearchButton.Location = new System.Drawing.Point(325, 15);
+            this.urlSearchButton.Location = new System.Drawing.Point(491, 15);
             this.urlSearchButton.Name = "urlSearchButton";
             this.urlSearchButton.Size = new System.Drawing.Size(77, 23);
             this.urlSearchButton.TabIndex = 4;
@@ -75,45 +75,48 @@
             // 
             this.userGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.userGroupBox.Controls.Add(this.savePathSearchButton);
-            this.userGroupBox.Controls.Add(this.savePathComboBox);
-            this.userGroupBox.Controls.Add(this.textBox1);
+            this.userGroupBox.Controls.Add(this.searchDownloadPathButton);
+            this.userGroupBox.Controls.Add(this.downloadPathComboBox);
+            this.userGroupBox.Controls.Add(this.downloadPathInfoTextBox);
             this.userGroupBox.Location = new System.Drawing.Point(12, 12);
             this.userGroupBox.Name = "userGroupBox";
-            this.userGroupBox.Size = new System.Drawing.Size(408, 47);
+            this.userGroupBox.Size = new System.Drawing.Size(574, 47);
             this.userGroupBox.TabIndex = 3;
             this.userGroupBox.TabStop = false;
             this.userGroupBox.Text = "사용자정보";
             // 
-            // textBox1
+            // searchDownloadPathButton
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(6, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 14);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "저장경로";
+            this.searchDownloadPathButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchDownloadPathButton.Location = new System.Drawing.Point(491, 15);
+            this.searchDownloadPathButton.Name = "searchDownloadPathButton";
+            this.searchDownloadPathButton.Size = new System.Drawing.Size(77, 23);
+            this.searchDownloadPathButton.TabIndex = 2;
+            this.searchDownloadPathButton.Text = "경로추가";
+            this.searchDownloadPathButton.UseVisualStyleBackColor = true;
+            this.searchDownloadPathButton.Click += new System.EventHandler(this.searchDownloadPathButton_Click);
             // 
-            // savePathComboBox
+            // downloadPathComboBox
             // 
-            this.savePathComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.downloadPathComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.savePathComboBox.FormattingEnabled = true;
-            this.savePathComboBox.Location = new System.Drawing.Point(88, 17);
-            this.savePathComboBox.Name = "savePathComboBox";
-            this.savePathComboBox.Size = new System.Drawing.Size(231, 20);
-            this.savePathComboBox.TabIndex = 1;
+            this.downloadPathComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.downloadPathComboBox.FormattingEnabled = true;
+            this.downloadPathComboBox.Location = new System.Drawing.Point(88, 17);
+            this.downloadPathComboBox.Name = "downloadPathComboBox";
+            this.downloadPathComboBox.Size = new System.Drawing.Size(397, 20);
+            this.downloadPathComboBox.TabIndex = 1;
+            this.downloadPathComboBox.SelectedIndexChanged += new System.EventHandler(this.downloadPathComboBox_SelectedIndexChanged);
             // 
-            // savePathSearchButton
+            // downloadPathInfoTextBox
             // 
-            this.savePathSearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.savePathSearchButton.Location = new System.Drawing.Point(325, 15);
-            this.savePathSearchButton.Name = "savePathSearchButton";
-            this.savePathSearchButton.Size = new System.Drawing.Size(77, 23);
-            this.savePathSearchButton.TabIndex = 2;
-            this.savePathSearchButton.Text = "경로추가";
-            this.savePathSearchButton.UseVisualStyleBackColor = true;
+            this.downloadPathInfoTextBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.downloadPathInfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.downloadPathInfoTextBox.Location = new System.Drawing.Point(6, 20);
+            this.downloadPathInfoTextBox.Name = "downloadPathInfoTextBox";
+            this.downloadPathInfoTextBox.Size = new System.Drawing.Size(76, 14);
+            this.downloadPathInfoTextBox.TabIndex = 0;
+            this.downloadPathInfoTextBox.Text = "저장경로";
             // 
             // youtubeGroupBox
             // 
@@ -124,7 +127,7 @@
             this.youtubeGroupBox.Controls.Add(this.urlSearchTextBox);
             this.youtubeGroupBox.Location = new System.Drawing.Point(12, 66);
             this.youtubeGroupBox.Name = "youtubeGroupBox";
-            this.youtubeGroupBox.Size = new System.Drawing.Size(408, 172);
+            this.youtubeGroupBox.Size = new System.Drawing.Size(574, 227);
             this.youtubeGroupBox.TabIndex = 4;
             this.youtubeGroupBox.TabStop = false;
             this.youtubeGroupBox.Text = "유투브 검색";
@@ -134,24 +137,25 @@
             this.logTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.logTextBox.Location = new System.Drawing.Point(12, 244);
+            this.logTextBox.Location = new System.Drawing.Point(12, 299);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
             this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logTextBox.Size = new System.Drawing.Size(408, 237);
+            this.logTextBox.Size = new System.Drawing.Size(574, 181);
             this.logTextBox.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 493);
+            this.ClientSize = new System.Drawing.Size(598, 492);
             this.Controls.Add(this.logTextBox);
             this.Controls.Add(this.userGroupBox);
             this.Controls.Add(this.youtubeGroupBox);
             this.Name = "MainForm";
-            this.Text = "YoutubeDownloader";
+            this.Text = "YoutubeDownloaderDll";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.userGroupBox.ResumeLayout(false);
             this.userGroupBox.PerformLayout();
@@ -168,9 +172,9 @@
         private System.Windows.Forms.TextBox urlSearchTextBox;
         private System.Windows.Forms.Button urlSearchButton;
         private System.Windows.Forms.GroupBox userGroupBox;
-        private System.Windows.Forms.Button savePathSearchButton;
-        private System.Windows.Forms.ComboBox savePathComboBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button searchDownloadPathButton;
+        private System.Windows.Forms.ComboBox downloadPathComboBox;
+        private System.Windows.Forms.TextBox downloadPathInfoTextBox;
         private System.Windows.Forms.GroupBox youtubeGroupBox;
         private System.Windows.Forms.TextBox logTextBox;
     }

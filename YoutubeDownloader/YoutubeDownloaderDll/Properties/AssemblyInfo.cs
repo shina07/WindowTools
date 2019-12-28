@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("YoutubeDownloader")]
+[assembly: AssemblyTitle("YoutubeDownloaderDll")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("YoutubeDownloader")]
+[assembly: AssemblyProduct("YoutubeDownloaderDll")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7faa7702-1e52-4e38-a9e0-3b6083329404")]
+[assembly: Guid("371ec215-d876-4ea9-a98b-cfecc6350bc7")]
 
 // Version information for an assembly consists of the following four values:
 //

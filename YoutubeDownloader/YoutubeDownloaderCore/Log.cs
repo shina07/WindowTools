@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoutubeDownloader.Core
+namespace YoutubeDownloaderCore
 {
     // Static Log
-    internal class Log : IReporter
+    public class Log : IReporter
     {
         static Log()
         {

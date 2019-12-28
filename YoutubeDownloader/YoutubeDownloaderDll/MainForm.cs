@@ -7,10 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YoutubeDownloaderCore;
 
-using YoutubeDownloader.Core;
-
-namespace YoutubeDownloader
+namespace YoutubeDownloaderDll
 {
     public partial class MainForm : Form, IReporter
     {
@@ -21,11 +20,33 @@ namespace YoutubeDownloader
             Logger = new Logger(this.Name, this);
         }
 
+        private void downloadPathComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Configuration.Save();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             Logger.WriteNoticeLine("LOAD COMPLETE");
         }
 
+        private void searchDownloadPathButton_Click(object sender, EventArgs e)
+        {
+            var folderBrowserDialog = new FolderBrowserDialog();
+
+            var result = folderBrowserDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                downloadPathComboBox.Items.Insert(0, folderBrowserDialog.SelectedPath);
+                downloadPathComboBox.SelectedIndex = 0;
+            }
+        }
 
         public void WriteLine(LogType t, string fmt, params object[] args)
         {

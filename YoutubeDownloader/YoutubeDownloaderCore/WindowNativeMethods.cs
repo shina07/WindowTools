@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace YoutubeDownloader
+namespace YoutubeDownloaderCore
 {
-    internal class WindowNativeMethods
+    public class WindowNativeMethods
     {
         [DllImport("user32")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int message, IntPtr wParam, IntPtr lParam);

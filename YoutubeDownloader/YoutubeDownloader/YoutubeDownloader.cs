@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
+using YoutubeDownloaderCore;
 
 namespace YoutubeDownloader
 {
-    static class YoutubeDownloader
+    internal static class YoutubeDownloader
     {
         private static Mutex mutex = new Mutex(true, "YoutubeDownlaoderSingletonLock");
 
@@ -33,7 +34,7 @@ namespace YoutubeDownloader
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
 
-                    Application.Run(new MainForm());
+                    Run();
                 }
                 finally
                 {
@@ -45,5 +46,11 @@ namespace YoutubeDownloader
                 WindowNativeMethods.SendMessage((IntPtr)WindowNativeMethods.HWND_BROADCAST, WindowNativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
             }
         }
+
+        private static void Run()
+        {
+            YoutubeDownloaderDll.YoutubeDownloaderDll.Run();
+        }
+        
     }
 }

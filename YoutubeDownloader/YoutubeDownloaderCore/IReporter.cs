@@ -1,4 +1,4 @@
-﻿namespace YoutubeDownloader.Core
+﻿namespace YoutubeDownloaderCore
 {
     public enum LogType
     {
@@ -14,7 +14,7 @@
         Warning,
     };
 
-    internal interface IReporter
+    public interface IReporter
     {
         void WriteLine(LogType t, string fmt, params object[] args);
     }

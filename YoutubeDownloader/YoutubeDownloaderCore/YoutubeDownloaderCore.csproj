@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7FAA7702-1E52-4E38-A9E0-3B6083329404}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>YoutubeDownloader</RootNamespace>
-    <AssemblyName>YoutubeDownloader</AssemblyName>
+    <ProjectGuid>{E52FC08C-ABFE-4FC2-BD98-110A25A3DA4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>YoutubeDownloaderCore</RootNamespace>
+    <AssemblyName>YoutubeDownloaderCore</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,8 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="YoutubeDownloader.cs" />
+    <Compile Include="IReporter.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowNativeMethods.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -56,7 +62,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -70,16 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\YoutubeDownloaderCore\YoutubeDownloaderCore.csproj">
-      <Project>{e52fc08c-abfe-4fc2-bd98-110a25a3da4e}</Project>
-      <Name>YoutubeDownloaderCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\YoutubeDownloaderDll\YoutubeDownloaderDll.csproj">
-      <Project>{371ec215-d876-4ea9-a98b-cfecc6350bc7}</Project>
-      <Name>YoutubeDownloaderDll</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

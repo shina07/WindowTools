@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeDownloader", "YoutubeDownloader\YoutubeDownloader.csproj", "{371EC215-D876-4EA9-A98B-CFECC6350BC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeDownloaderDll", "YoutubeDownloaderDll\YoutubeDownloaderDll.csproj", "{371EC215-D876-4EA9-A98B-CFECC6350BC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeDownloader", "YoutubeDownloader\YoutubeDownloader.csproj", "{7FAA7702-1E52-4E38-A9E0-3B6083329404}"
+	ProjectSection(ProjectDependencies) = postProject
+		{371EC215-D876-4EA9-A98B-CFECC6350BC7} = {371EC215-D876-4EA9-A98B-CFECC6350BC7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeDownloaderCore", "YoutubeDownloaderCore\YoutubeDownloaderCore.csproj", "{E52FC08C-ABFE-4FC2-BD98-110A25A3DA4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{371EC215-D876-4EA9-A98B-CFECC6350BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{371EC215-D876-4EA9-A98B-CFECC6350BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{371EC215-D876-4EA9-A98B-CFECC6350BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FAA7702-1E52-4E38-A9E0-3B6083329404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FAA7702-1E52-4E38-A9E0-3B6083329404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FAA7702-1E52-4E38-A9E0-3B6083329404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FAA7702-1E52-4E38-A9E0-3B6083329404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E52FC08C-ABFE-4FC2-BD98-110A25A3DA4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E52FC08C-ABFE-4FC2-BD98-110A25A3DA4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E52FC08C-ABFE-4FC2-BD98-110A25A3DA4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E52FC08C-ABFE-4FC2-BD98-110A25A3DA4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
