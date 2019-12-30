@@ -18,6 +18,7 @@ namespace YoutubeDownloaderDll
             InitializeComponent();
 
             Logger = new Logger(this.Name, this);
+            YoutubeHelper = new YoutubeHelper();
         }
 
         private void downloadPathComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,6 +61,21 @@ namespace YoutubeDownloaderDll
             }
         }
 
+        private void urlSearchButton_Click(object sender, EventArgs e)
+        {
+            var url = urlSearchTextBox.Text;
+            var root = Configuration.Instance.Root;
+
+            if (YoutubeHelper.DownloadVideoFromUrl(url, root) == true)
+            {
+                Logger.WriteNoticeLine("DOWNLOAD SUCCESSFUL");
+            }
+            {
+                Logger.WriteErrorLine("DOWNLOAD FAILED");
+            }
+            
+        }
+
         public void WriteLine(LogType t, string fmt, params object[] args)
         {
             WriteLog(string.Format("!@{0, -10} @@{1, -15} {3}{4}", t.ToString().ToUpper(), DateTime.Now.ToString(" HH:mm:ss.fff "), Tag, string.Format(fmt, args), Environment.NewLine));
@@ -71,5 +87,6 @@ namespace YoutubeDownloaderDll
         }
 
         private Logger Logger { get; set; }
+        private YoutubeHelper YoutubeHelper { get; set; }
     }
 }

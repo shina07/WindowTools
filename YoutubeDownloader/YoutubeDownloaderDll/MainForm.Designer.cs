@@ -71,6 +71,7 @@
             this.urlSearchButton.TabIndex = 4;
             this.urlSearchButton.Text = "검색";
             this.urlSearchButton.UseVisualStyleBackColor = true;
+            this.urlSearchButton.Click += new System.EventHandler(this.urlSearchButton_Click);
             // 
             // userGroupBox
             // 
