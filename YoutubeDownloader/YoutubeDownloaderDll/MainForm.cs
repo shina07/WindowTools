@@ -70,6 +70,7 @@ namespace YoutubeDownloaderDll
             {
                 Logger.WriteNoticeLine("DOWNLOAD SUCCESSFUL");
             }
+            else
             {
                 Logger.WriteErrorLine("DOWNLOAD FAILED");
             }
