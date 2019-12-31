@@ -65,8 +65,10 @@ namespace YoutubeDownloaderDll
         {
             var url = urlSearchTextBox.Text;
             var root = Configuration.Instance.Root;
+            urlSearchTextBox.Clear();
 
-            if (YoutubeHelper.DownloadVideoFromUrl(url, root) == true)
+            //if (YoutubeHelper.DownloadVideoFromUrl(url, root) == true)
+            if (YoutubeHelper.DownloadMp3FromUrl(url, root) == true)
             {
                 Logger.WriteNoticeLine("DOWNLOAD SUCCESSFUL");
             }
