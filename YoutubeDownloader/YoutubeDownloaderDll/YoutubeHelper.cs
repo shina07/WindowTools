@@ -63,5 +63,36 @@ namespace YoutubeDownloaderDll
 
             return true;
         }
+
+        internal bool GetThumbnail(string url, string root)
+        {
+            try
+            {
+                var youtube = YouTube.Default;
+                var video = youtube.GetVideo(url);
+
+                var path = Path.Combine(root, video.FullName);
+                var filename = Path.ChangeExtension(path, ".mp3");
+
+                File.WriteAllBytes(path, video.GetBytes());
+
+                var inputFile = new MediaFile { Filename = path };
+                var outputFile = new MediaFile { Filename = filename };
+
+                using (var engine = new Engine())
+                {
+                    engine.GetMetadata(inputFile);
+                    engine.Convert(inputFile, outputFile);
+                    //engine.GetThumbnail()
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("CANNOT DOWNLOAD YOUTUBE VIDEO: {0}", e.ToString());
+                return false;
+            }
+
+            return true;
+        }
     }
 }

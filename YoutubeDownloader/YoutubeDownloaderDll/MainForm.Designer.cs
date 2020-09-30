@@ -37,6 +37,7 @@
             this.downloadPathComboBox = new System.Windows.Forms.ComboBox();
             this.downloadPathInfoTextBox = new System.Windows.Forms.TextBox();
             this.youtubeGroupBox = new System.Windows.Forms.GroupBox();
+            this.downloadingPanel = new System.Windows.Forms.Panel();
             this.logTextBox = new System.Windows.Forms.TextBox();
             this.userGroupBox.SuspendLayout();
             this.youtubeGroupBox.SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             this.youtubeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.youtubeGroupBox.Controls.Add(this.downloadingPanel);
             this.youtubeGroupBox.Controls.Add(this.urlSearchButton);
             this.youtubeGroupBox.Controls.Add(this.urlInfoTextBox);
             this.youtubeGroupBox.Controls.Add(this.urlSearchTextBox);
@@ -133,6 +135,17 @@
             this.youtubeGroupBox.TabIndex = 4;
             this.youtubeGroupBox.TabStop = false;
             this.youtubeGroupBox.Text = "유투브 검색";
+            // 
+            // downloadingPanel
+            // 
+            this.downloadingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.downloadingPanel.AutoScroll = true;
+            this.downloadingPanel.AutoSize = true;
+            this.downloadingPanel.Location = new System.Drawing.Point(6, 44);
+            this.downloadingPanel.Name = "downloadingPanel";
+            this.downloadingPanel.Size = new System.Drawing.Size(562, 177);
+            this.downloadingPanel.TabIndex = 5;
             // 
             // logTextBox
             // 
@@ -145,7 +158,7 @@
             this.logTextBox.ReadOnly = true;
             this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.logTextBox.Size = new System.Drawing.Size(574, 181);
-            this.logTextBox.TabIndex = 5;
+            this.logTextBox.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -180,6 +193,7 @@
         private System.Windows.Forms.TextBox downloadPathInfoTextBox;
         private System.Windows.Forms.GroupBox youtubeGroupBox;
         private System.Windows.Forms.TextBox logTextBox;
+        private System.Windows.Forms.Panel downloadingPanel;
     }
 }
 
